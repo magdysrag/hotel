@@ -138,6 +138,37 @@ body {
     background-color: $active-color;
   }
 }
+.about {
+  .hesd-about {
+    // font-size: 1.4rem;
+    color: $active-color;
+    font-weight: 800;
+    position: relative;
+    text-transform: uppercase;
+    &::after {
+      content: "";
+      width: 2.8rem;
+      height: 0.15rem;
+      background-color: $active-color;
+      position: absolute;
+      left: 6.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  h1 {
+    .hotelier {
+      color: $active-color;
+    }
+  }
+  svg {
+    color: $active-color;
+  }
+  .btn {
+    width: fit-content;
+    background-color: $active-color;
+  }
+}
 
 .slideInDown {
   animation-name: slideInDown;
@@ -152,6 +183,36 @@ body {
   animation-duration: 1s;
   animation-fill-mode: both;
 }
+.zoomIn {
+  animation-name: zoomIn;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+
+}
+.delay1 {
+  animation-delay: .2s;
+}
+.delay1 {
+  animation-delay: .4s;
+}
+.delay2 {
+  animation-delay: .6s;
+}
+.delay3 {
+  animation-delay: .8s;
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @keyframes slideInDown {
   from {
     transform: translate3d(0, -100%, 0);

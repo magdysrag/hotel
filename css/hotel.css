@@ -134,6 +134,35 @@ body {
   background-color: #fea116;
 }
 
+.about .hesd-about {
+  color: #fea116;
+  font-weight: 800;
+  position: relative;
+  text-transform: uppercase;
+}
+.about .hesd-about::after {
+  content: "";
+  width: 2.8rem;
+  height: 0.15rem;
+  background-color: #fea116;
+  position: absolute;
+  left: 6.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.about h1 .hotelier {
+  color: #fea116;
+}
+.about svg {
+  color: #fea116;
+}
+.about .btn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #fea116;
+}
+
 .slideInDown {
   -webkit-animation-name: slideInDown;
           animation-name: slideInDown;
@@ -156,6 +185,56 @@ body {
           animation-fill-mode: both;
 }
 
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+          animation-name: zoomIn;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.delay1 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+.delay1 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+
+.delay2 {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.delay3 {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 @-webkit-keyframes slideInDown {
   from {
     transform: translate3d(0, -100%, 0);
@@ -164,7 +243,6 @@ body {
     transform: translate3d(0, 0, 0);
   }
 }
-
 @keyframes slideInDown {
   from {
     transform: translate3d(0, -100%, 0);
