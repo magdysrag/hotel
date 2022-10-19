@@ -161,15 +161,66 @@ body {
       color: $active-color;
     }
   }
-  svg {
-    color: $active-color;
+}
+.room {
+  .main-head {
+    text-align: center;
+    h6 {
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: $active-color;
+      display: inline-block;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 2.8rem;
+        height: 0.18rem;
+        background-color: $active-color;
+        left: -55px;
+        top: 50%;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        width: 2.8rem;
+        height: 0.18rem;
+        background-color: $active-color;
+        right: -55px;
+        top: 50%;
+      }
+    }
+    h1 {
+      font-weight: 800;
+      span {
+        color: $active-color;
+        text-transform: uppercase;
+      }
+    }
   }
-  .btn {
-    width: fit-content;
+  .price {
     background-color: $active-color;
   }
+  .content {
+    font-size: 0.9rem;
+  }
 }
-
+svg {
+  color: $active-color;
+}
+.btn {
+  width: fit-content;
+  background-color: $active-color;
+  color: white;
+  &:hover {
+    background-color: $active-color;
+    color: white;
+  }
+  &.bg-dark {
+    background-color: #212529;
+    color: white;
+  }
+}
 .slideInDown {
   animation-name: slideInDown;
 }
@@ -187,19 +238,18 @@ body {
   animation-name: zoomIn;
   animation-duration: 1s;
   animation-timing-function: linear;
-
 }
 .delay1 {
-  animation-delay: .2s;
+  animation-delay: 0.2s;
 }
 .delay1 {
-  animation-delay: .4s;
+  animation-delay: 0.4s;
 }
 .delay2 {
-  animation-delay: .6s;
+  animation-delay: 0.6s;
 }
 .delay3 {
-  animation-delay: .8s;
+  animation-delay: 0.8s;
 }
 @keyframes zoomIn {
   from {
