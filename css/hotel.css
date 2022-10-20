@@ -154,6 +154,10 @@ body {
   color: #fea116;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .room .main-head {
   text-align: center;
 }
@@ -194,6 +198,34 @@ body {
 }
 .room .content {
   font-size: 0.9rem;
+}
+
+.video .play-video {
+  position: relative;
+  height: 100%;
+  min-height: 500px;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(../img/video.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.video .btn-play {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  box-sizing: content-box;
+  display: block;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: #fea116;
+}
+.video .play {
+  border: 2px solid red;
 }
 
 svg {
@@ -243,8 +275,20 @@ svg {
           animation-name: zoomIn;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.delay {
+  -webkit-animation-delay: -0.2s;
+          animation-delay: -0.2s;
+}
+
+.delay0 {
+  -webkit-animation-delay: -0.2s;
+          animation-delay: -0.2s;
 }
 
 .delay1 {
@@ -252,19 +296,53 @@ svg {
           animation-delay: 0.2s;
 }
 
-.delay1 {
+.delay2 {
   -webkit-animation-delay: 0.4s;
           animation-delay: 0.4s;
 }
 
-.delay2 {
+.delay3 {
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
 }
 
-.delay3 {
+.delay4 {
   -webkit-animation-delay: 0.8s;
           animation-delay: 0.8s;
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
+}
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+          animation-name: fadeInUp;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes zoomIn {
@@ -272,9 +350,10 @@ svg {
     opacity: 0;
     transform: scale3d(0.3, 0.3, 0.3);
   }
-  50% {
+  100% {
     opacity: 1;
     transform: scale(1);
+    visibility: visible;
   }
 }
 
@@ -283,9 +362,10 @@ svg {
     opacity: 0;
     transform: scale3d(0.3, 0.3, 0.3);
   }
-  50% {
+  100% {
     opacity: 1;
     transform: scale(1);
+    visibility: visible;
   }
 }
 @-webkit-keyframes slideInDown {
