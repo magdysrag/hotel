@@ -123,7 +123,7 @@ body {
           height: 100%;
           width: 100%;
           object-fit: cover;
-          // display: none;
+          display: none;
         }
       }
     }
@@ -209,6 +209,24 @@ body {
   }
 }
 .video {
+  // in class adding with scroll
+  &.show {
+    position: relative;
+    animation: zoomIn 0.4s ease-in 1;
+  }
+  h5 {
+    position: relative;
+    display: inline-block;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 0.1rem;
+      width: 3.5rem;
+      top: 50%;
+      right: -4.5rem;
+      background-color: $active-color;
+    }
+  }
   .play-video {
     position: relative;
     height: 100%;
@@ -216,10 +234,13 @@ body {
     background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
       url(../img/video.jpg);
     // background: linear-gradient(rgba(15, 23, 43, 0.1), rgba(15, 23, 43, 0.1)),
-      // url(../img/video.jpg);
-    background-position: center ;
+    // url(../img/video.jpg);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  .fa-play {
+    z-index: 10;
   }
   .btn-play {
     position: absolute;
@@ -234,12 +255,24 @@ body {
     border-radius: 50%;
     border: none;
     outline: none;
-    background-color: $active-color ;
+    background-color: $active-color;
     // padding: 18px 20px 18px 28px;
-}
-.play  {
- border: 2px solid red;
-}
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translatex(-50%) translatey(-50%);
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: $active-color;
+      animation: pluse-border 1s infinite ease-out;
+    }
+  }
+  .play {
+    border: 2px solid red;
+  }
 }
 svg {
   color: $active-color;
@@ -255,6 +288,16 @@ svg {
   &.bg-dark {
     background-color: #212529;
     color: white;
+  }
+}
+@keyframes pluse-border {
+  0% {
+    transform: translatex(-50%) translatey(-50%) translatez(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translatex(-50%) translatey(-50%) translatez(0) scale(1.8);
+    opacity: 0;
   }
 }
 .slideInDown {
