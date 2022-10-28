@@ -112,23 +112,22 @@ body {
 }
 
 @media (max-width: 768px) {
-  .home .carousel-inner .carousel-item {
+  .home .carousel-item {
     min-height: 450px;
     position: relative;
   }
-  .home .carousel-inner .carousel-item img {
+  .home .carousel-item img {
     position: absolute;
-    height: 100%;
     width: 100%;
+    height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
-    display: none;
   }
 }
 .booking {
   position: relative;
-  margin-top: -3.5rem;
-  z-index: 2;
+  margin-top: -3.5rem !important;
+  z-index: 1;
   text-transform: capitalize;
 }
 .booking .btn {
@@ -159,17 +158,17 @@ body {
   visibility: hidden;
 }
 
-.room .main-head {
+.main-head {
   text-align: center;
 }
-.room .main-head h6 {
+.main-head h6 {
   font-weight: 800;
   font-size: 1.3rem;
   color: #fea116;
   display: inline-block;
   position: relative;
 }
-.room .main-head h6::before {
+.main-head h6::before {
   content: "";
   position: absolute;
   width: 2.8rem;
@@ -178,7 +177,7 @@ body {
   left: -55px;
   top: 50%;
 }
-.room .main-head h6::after {
+.main-head h6::after {
   content: "";
   position: absolute;
   width: 2.8rem;
@@ -187,13 +186,15 @@ body {
   right: -55px;
   top: 50%;
 }
-.room .main-head h1 {
+.main-head h1 {
   font-weight: 800;
+  margin-bottom: 3rem;
 }
-.room .main-head h1 span {
+.main-head h1 span {
   color: #fea116;
   text-transform: uppercase;
 }
+
 .room .price {
   background-color: #fea116;
 }
@@ -263,6 +264,183 @@ body {
   border: 2px solid red;
 }
 
+.services .upanimate.delay-animation:nth-child(1) {
+  -webkit-animation-delay: calc(01 * 0.2s);
+          animation-delay: calc(01 * 0.2s);
+  color: chocolate;
+}
+.services .upanimate.delay-animation:nth-child(2) {
+  -webkit-animation-delay: calc(02 * 0.2s);
+          animation-delay: calc(02 * 0.2s);
+  color: chocolate;
+}
+.services .upanimate.delay-animation:nth-child(3) {
+  -webkit-animation-delay: calc(03 * 0.2s);
+          animation-delay: calc(03 * 0.2s);
+  color: chocolate;
+}
+.services .upanimate.delay-animation:nth-child(4) {
+  -webkit-animation-delay: calc(04 * 0.2s);
+          animation-delay: calc(04 * 0.2s);
+  color: chocolate;
+}
+.services .upanimate.delay-animation:nth-child(5) {
+  -webkit-animation-delay: calc(05 * 0.2s);
+          animation-delay: calc(05 * 0.2s);
+  color: chocolate;
+}
+.services .upanimate.delay-animation:nth-child(6) {
+  -webkit-animation-delay: calc(06 * 0.2s);
+          animation-delay: calc(06 * 0.2s);
+  color: chocolate;
+}
+.services .servic-icon {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.services .service-item {
+  text-decoration: none;
+  color: #000;
+  padding: 20px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+}
+.services .service-item p {
+  color: #888;
+}
+.services .service-item:hover {
+  cursor: pointer;
+  background-color: #fea116;
+  color: #fff;
+}
+.services .service-item:hover svg,
+.services .service-item:hover p {
+  color: #fff;
+}
+
+.testimonial {
+  position: relative;
+  min-height: 300px;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/carousel-2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.testimonial .active {
+  display: flex;
+}
+
+.team .img-animation.delay-animation:nth-child(1) {
+  -webkit-animation-delay: calc(1 * 0.2s);
+          animation-delay: calc(1 * 0.2s);
+}
+.team .img-animation.delay-animation:nth-child(2) {
+  -webkit-animation-delay: calc(2 * 0.2s);
+          animation-delay: calc(2 * 0.2s);
+}
+.team .img-animation.delay-animation:nth-child(3) {
+  -webkit-animation-delay: calc(3 * 0.2s);
+          animation-delay: calc(3 * 0.2s);
+}
+.team .img-animation.delay-animation:nth-child(4) {
+  -webkit-animation-delay: calc(4 * 0.2s);
+          animation-delay: calc(4 * 0.2s);
+}
+.team .box h5 {
+  font-weight: bold;
+}
+.team .box p {
+  font-size: 0.85rem;
+  color: #777;
+  padding-bottom: 1rem;
+}
+.team .box .contact {
+  position: relative;
+  top: -1.3rem;
+}
+
+.title-hotel {
+  font-size: 2.5rem;
+}
+
+.title {
+  color: #fea116;
+  position: relative;
+}
+.title::after {
+  content: "";
+  position: absolute;
+  left: 6rem;
+  top: 50%;
+  transform: translateY(-50);
+  width: 3rem;
+  height: 0.1rem;
+  background-color: #fea116;
+}
+
+footer {
+  background-color: #0f172b;
+  min-height: 500px;
+  padding-top: 10rem;
+}
+footer svg {
+  color: #fff;
+}
+footer .info {
+  background-color: #fea116;
+}
+footer a:not(a.btn-social, a.site, a.end)::before {
+  position: relative;
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  left: -1rem;
+}
+footer .media a {
+  border-radius: 50%;
+  background-color: transparent;
+  position: relative;
+}
+footer .media a svg {
+  color: #fff;
+  font-size: 0.9rem;
+}
+footer .media a:hover {
+  background-color: #fff;
+}
+footer .media a:hover svg {
+  color: #fea116;
+}
+footer .copyright {
+  font-size: 1rem;
+}
+footer .copyright a {
+  font-size: 0.9rem;
+}
+
+.newsletter {
+  position: relative;
+  left: 2rem;
+  bottom: -6rem;
+  width: 100%;
+}
+.newsletter span {
+  color: #fea116;
+}
+.newsletter .input {
+  margin-top: 15px;
+}
+.newsletter .input button {
+  background-color: #fea116;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+}
 svg {
   color: #fea116;
 }
@@ -331,10 +509,14 @@ svg {
           animation-name: zoomIn;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
-  -webkit-animation-timing-function: ease-in;
-          animation-timing-function: ease-in;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+}
+
+.none {
+  display: none;
 }
 
 .delay {

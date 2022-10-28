@@ -114,25 +114,22 @@ body {
 }
 @media (max-width: 768px) {
   .home {
-    .carousel-inner {
-      .carousel-item {
-        min-height: 450px;
-        position: relative;
-        img {
-          position: absolute;
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
-          display: none;
-        }
+    .carousel-item {
+      min-height: 450px;
+      position: relative;
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
   }
 }
 .booking {
   position: relative;
-  margin-top: -3.5rem;
-  z-index: 2;
+  margin-top: -3.5rem !important;
+  z-index: 1;
   text-transform: capitalize;
   .btn {
     background-color: $active-color;
@@ -165,42 +162,43 @@ body {
 .hidden {
   visibility: hidden;
 }
-.room {
-  .main-head {
-    text-align: center;
-    h6 {
-      font-weight: 800;
-      font-size: 1.3rem;
-      color: $active-color;
-      display: inline-block;
-      position: relative;
-      &::before {
-        content: "";
-        position: absolute;
-        width: 2.8rem;
-        height: 0.18rem;
-        background-color: $active-color;
-        left: -55px;
-        top: 50%;
-      }
-      &::after {
-        content: "";
-        position: absolute;
-        width: 2.8rem;
-        height: 0.18rem;
-        background-color: $active-color;
-        right: -55px;
-        top: 50%;
-      }
+.main-head {
+  text-align: center;
+  h6 {
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: $active-color;
+    display: inline-block;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 2.8rem;
+      height: 0.18rem;
+      background-color: $active-color;
+      left: -55px;
+      top: 50%;
     }
-    h1 {
-      font-weight: 800;
-      span {
-        color: $active-color;
-        text-transform: uppercase;
-      }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 2.8rem;
+      height: 0.18rem;
+      background-color: $active-color;
+      right: -55px;
+      top: 50%;
     }
   }
+  h1 {
+    font-weight: 800;
+    margin-bottom: 3rem;
+    span {
+      color: $active-color;
+      text-transform: uppercase;
+    }
+  }
+}
+.room {
   .price {
     background-color: $active-color;
   }
@@ -274,6 +272,159 @@ body {
     border: 2px solid red;
   }
 }
+
+.services {
+  @for $i from 1 to 7 {
+    //1,2,3,4,5,6
+    .upanimate.delay-animation:nth-child(#{$i}) {
+      animation-delay: calc(0#{$i} * 0.2s);
+      color: chocolate;
+    }
+  }
+
+  .servic-icon {
+    width: fit-content;
+  }
+  .service-item {
+    text-decoration: none;
+    color: #000;
+    p {
+      color: #888;
+    }
+    padding: 20px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
+    &:hover {
+      cursor: pointer;
+      background-color: $active-color;
+      color: #fff;
+      svg,
+      p {
+        color: #fff;
+      }
+    }
+  }
+}
+.testimonial {
+  position: relative;
+  min-height: 300px;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../img/carousel-2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .active {
+    display: flex;
+  }
+}
+.team {
+  @for $i from 1 to 5 {
+    //1,2,3,4
+    .img-animation.delay-animation:nth-child(#{$i}) {
+      animation-delay: calc(#{$i} * 0.2s);
+    }
+  }
+  .box {
+    h5 {
+      font-weight: bold;
+    }
+    p {
+      font-size: 0.85rem;
+      color: #777;
+      padding-bottom: 1rem;
+    }
+    .contact {
+      position: relative;
+      top: -1.3rem;
+    }
+  }
+}
+.title-hotel {
+  font-size: 2.5rem;
+}
+.title {
+  color: $active-color;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 6rem;
+    top: 50%;
+    transform: translateY(-50);
+    width: 3rem;
+    height: 0.1rem;
+    background-color: $active-color;
+  }
+}
+footer {
+  background-color: #0f172b;
+  svg {
+    color: #fff;
+  }
+  min-height: 500px;
+  padding-top: 10rem;
+  .info {
+    background-color: $active-color;
+  }
+  a:not(a.btn-social, a.site, a.end) {
+    &::before {
+      position: relative;
+      content: "\f105";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      // margin-right: 10px;
+      left: -1rem;
+    }
+  }
+  .media {
+    a {
+      border-radius: 50%;
+      background-color: transparent;
+      position: relative;
+      svg {
+        color: #fff;
+        font-size: 0.9rem;
+      }
+      &:hover {
+        background-color: #fff;
+        svg {
+          color: $active-color;
+        }
+      }
+    }
+  }
+  .copyright {
+    font-size: 1rem;
+    a {
+      font-size: 0.9rem;
+    }
+  }
+}
+.newsletter {
+  position: relative;
+  left: 2rem;
+  bottom: -6rem;
+  width: 100%;
+  span {
+    color: $active-color;
+  }
+  .input {
+    margin-top: 15px;
+    button {
+      background-color: $active-color;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+    }
+    input {
+      // width: 90%;
+    }
+  }
+}
 svg {
   color: $active-color;
 }
@@ -316,8 +467,11 @@ svg {
 .zoomIn {
   animation-name: zoomIn;
   animation-duration: 1s;
-  animation-timing-function: ease-in;
+  animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+}
+.none {
+  display: none;
 }
 .delay {
   animation-delay: -0.2s;
